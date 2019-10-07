@@ -1,0 +1,51 @@
+//Testar as requisições - Schema Cliente
+@baseUrl = http://localhost:3000
+
+
+###
+// POST contratos
+POST {{baseUrl}}/contratos
+Content-Type: application/json
+
+{
+    "nome": "Embratel Dados",
+    "descricao": "Link Dedicado Internet de 300 MB",
+    "numeroNota": "45678",
+    "valor": "14539.68",
+    "dataEmissao": "20/10/2019",
+    "dataAssinatura": "21/10/2019",
+    "dataVencimento": "05/11/2019",
+}
+
+###
+// GET contratos
+GET {{baseUrl}}/contratos
+###
+// GET contratos/:id
+@id = 5d8e07242527b6174d61f480
+GET {{baseUrl}}/contratos/{{id}}
+
+###
+// GET contratos/:texto
+@texto = internet
+GET {{baseUrl}}/contratos/texto/{{texto}}
+
+###
+// PUT /contratos/:id
+@idUpdate = 5d8e07242527b6174d61f480
+PUT {{baseUrl}}/contratos/{{idUpdate}}
+Content-Type: application/json
+
+{
+    "nome": "Alterando Contrato",
+    "descricao": "A descrição do contrato foi alterada",
+    "numeroNota": "45678",
+    "valor": "14539.68",
+    "dataEmissao": "20/10/2019",
+    "dataAssinatura": "21/10/2019",
+    "dataVencimento": "05/11/2019",
+}
+###
+// DELETE contratos/:id
+@idDelete = 5d8e07242527b6174d61f480
+DELETE {{baseUrl}}/contratos/{{idDelete}}
