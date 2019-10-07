@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    const contratos = require('../controllers/contrato.controller.js');
+    const contratos = require('../controller/contrato.controller.js');
 
     // Cria um novo contrato
     app.post('/contratos', contratos.create)

@@ -12,9 +12,9 @@ Content-Type: application/json
     "descricao": "Link Dedicado Internet de 300 MB",
     "numeroNota": "45678",
     "valor": "14539.68",
-    "dataEmissao": "20/10/2019",
-    "dataAssinatura": "21/10/2019",
-    "dataVencimento": "05/11/2019",
+    "dataEmissao": "2019-10-20",
+    "dataAssinatura": "2019-10-20",
+    "dataVencimento": "2019-11-05"
 }
 
 ###

@@ -1,5 +1,5 @@
 //Obtendo o model do Contrato
-const Contrato = require('../models/contrato.model.js');
+const Contrato = require('../model/contrato.model.js');
 
 //Criando um novo contrato
 exports.create = (req, res) => {
@@ -45,7 +45,7 @@ exports.findAll = (req, res) => {
 
 // Obtendo todos os contratos a partir do nome, descrição ou código de barra
 exports.findByTexto = (req, res) => {
-    const termo = req.params.produtoTexto
+    const termo = req.params.cadastroTexto
     Contrato.find({
         $text: { $search: termo }, //iremos obter o termo a ser pesquisado e aplicá-lo em nosso índice.
       })
@@ -63,22 +63,22 @@ exports.findByTexto = (req, res) => {
 
 // Localizar um único contrato a partir do ID
 exports.findOne = (req, res) => {
-    Contrato.findById(req.params.produtoId)
+    Contrato.findById(req.params.contratoId)
     .then(contrato => {
         if(!contrato) {
             return res.status(404).send({
-                message: "Contrato não encontrado com o ID " + req.params.produtoId
+                message: "Contrato não encontrado com o ID " + req.params.contratoId
             });            
         }
         res.send(contrato);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
-                message: "Contrato não encontrado com o ID " + req.params.produtoId
+                message: "Contrato não encontrado com o ID " + req.params.contratoId
             });                
         }
         return res.status(500).send({
-            message: "Aconteceu algo errado ao obter o Contrato com o id " + req.params.produtoId
+            message: "Aconteceu algo errado ao obter o Contrato com o id " + req.params.contratoId
         });
     });
 };
@@ -93,7 +93,7 @@ exports.update = (req, res) => {
     }
 
     // Localiza e alteramos os dados do contrato a partir do conteúdo da requisição
-    Contrato.findByIdAndUpdate(req.params.produtoId, 
+    Contrato.findByIdAndUpdate(req.params.cadastroId, 
         {
             nome:  req.body.nome,
             descricao: req.body.descricao,
@@ -106,40 +106,40 @@ exports.update = (req, res) => {
     .then(contrato => {
         if(!contrato) {
             return res.status(404).send({
-                message: "Contrato não encontrado com o Id " + req.params.produtoId
+                message: "Contrato não encontrado com o Id " + req.params.cadastroId
             });
         }
         res.send(contrato);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
-                message: "Contrato não encontrado com o Id " + req.params.produtoId
+                message: "Contrato não encontrado com o Id " + req.params.cadastroId
             });                
         }
         return res.status(500).send({
-            message: "Aconteceu algo errado ao tentar alterar o contrato com o Id " + req.params.produtoId
+            message: "Aconteceu algo errado ao tentar alterar o contrato com o Id " + req.params.cadastroId
         });
     });
 };
 
 // Apaga um determinado contrato a partir do ID passado
 exports.delete = (req, res) => {    
-    Contrato.findByIdAndRemove(req.params.produtoId)
+    Contrato.findByIdAndRemove(req.params.cadastroId)
     .then(contrato => {
         if(!contrato) {
             return res.status(404).send({
-                message: "Contrato não encontrado com o Id " + req.params.produtoId
+                message: "Contrato não encontrado com o Id " + req.params.cadastroId
             });
         }
         res.send({message: "Contrato removido com sucesso!"});
     }).catch(err => {
         if(err.kind === 'ObjectId' || err.name === 'NotFound') {
             return res.status(404).send({
-                message: "Contrato não encontrado com o Id " + req.params.produtoId
+                message: "Contrato não encontrado com o Id " + req.params.cadastroId
             });                
         }
         return res.status(500).send({
-            message: "Não foi possível apagar o contrato com o Id " + req.params.produtoId
+            message: "Não foi possível apagar o contrato com o Id " + req.params.cadastroId
         });
     });
 };

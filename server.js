@@ -30,6 +30,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(config.urlMongodbLocal, {
     //Configurações para evitar os erros de deprecated functions (funções descontinuadas)
     useNewUrlParser: true, //Atribuímos para utilizar o novo Parser de URL
+    useUnifiedTopology: true,
     useCreateIndex: true, //Como a função ensureIndex() está descontinuada, iremos forçar para ele utilizar o CreateIndex.
     useFindAndModify: false //Definimos como false para fazer com que o Mongoose utilize os métodos findOneAndUpdate() e findOneAndRemove() por padrão
 }).then(() => {
