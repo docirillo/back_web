@@ -22,17 +22,17 @@ Content-Type: application/json
 GET {{baseUrl}}/contratos
 ###
 // GET contratos/:id
-@id = 5d8e07242527b6174d61f480
+@id = 5d9bbb2109a70d10b0824e7e
 GET {{baseUrl}}/contratos/{{id}}
 
 ###
 // GET contratos/:texto
-@texto = internet
+@texto = dedicado
 GET {{baseUrl}}/contratos/texto/{{texto}}
 
 ###
 // PUT /contratos/:id
-@idUpdate = 5d8e07242527b6174d61f480
+@idUpdate = 5d9bbb2109a70d10b0824e7e
 PUT {{baseUrl}}/contratos/{{idUpdate}}
 Content-Type: application/json
 
@@ -41,11 +41,11 @@ Content-Type: application/json
     "descricao": "A descrição do contrato foi alterada",
     "numeroNota": "45678",
     "valor": "14539.68",
-    "dataEmissao": "20/10/2019",
-    "dataAssinatura": "21/10/2019",
-    "dataVencimento": "05/11/2019",
+    "dataEmissao": "2019-10-22",
+    "dataAssinatura": "2019-10-23",
+    "dataVencimento": "2019-11-10"
 }
 ###
 // DELETE contratos/:id
-@idDelete = 5d8e07242527b6174d61f480
+@idDelete = 5d9bc1969787521c4432c937
 DELETE {{baseUrl}}/contratos/{{idDelete}}
