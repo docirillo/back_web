@@ -21,7 +21,7 @@ exports.create = (req, res) => {
     }).catch(err => {        
         if(err.message.indexOf('duplicate key error') !== -1){
             res.status(500).send({
-                message: "O código de barras informado já existe na base de dados." ||  err.message 
+                message: "O contrato informado já existe na base de dados." ||  err.message 
             });
         } else
         res.status(500).send({
@@ -43,7 +43,7 @@ exports.findAll = (req, res) => {
     });
 };
 
-// Obtendo todos os contratos a partir do nome, descrição ou código de barra
+// Obtendo todos os contratos a partir do nome ou descrição
 exports.findByTexto = (req, res) => {
     const termo = req.params.contratoTexto
     Contrato.find({

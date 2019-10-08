@@ -8,13 +8,13 @@ POST {{baseUrl}}/contratos
 Content-Type: application/json
 
 {
-    "nome": "Embratel Dados",
-    "descricao": "Link Dedicado Internet de 300 MB",
-    "numeroNota": "45678",
-    "valor": "14539.68",
-    "dataEmissao": "2019-10-20",
-    "dataAssinatura": "2019-10-20",
-    "dataVencimento": "2019-11-05"
+    "nome": "NETServ",
+    "descricao": "Link Dedicado Internet de 100 MB",
+    "numeroNota": "49371",
+    "valor": "4040.00",
+    "dataEmissao": "2019-10-02",
+    "dataAssinatura": "2019-10-04",
+    "dataVencimento": "2019-10-20"
 }
 
 ###
@@ -27,12 +27,12 @@ GET {{baseUrl}}/contratos/{{id}}
 
 ###
 // GET contratos/:texto
-@texto = dedicado
+@texto = nonius
 GET {{baseUrl}}/contratos/texto/{{texto}}
 
 ###
 // PUT /contratos/:id
-@idUpdate = 5d9bbb2109a70d10b0824e7e
+@idUpdate = 5d9bce2ed4ddba0dec8b0530
 PUT {{baseUrl}}/contratos/{{idUpdate}}
 Content-Type: application/json
 
@@ -47,5 +47,5 @@ Content-Type: application/json
 }
 ###
 // DELETE contratos/:id
-@idDelete = 5d9bc1969787521c4432c937
+@idDelete = 5d9bd0eed4ddba0dec8b0531
 DELETE {{baseUrl}}/contratos/{{idDelete}}
