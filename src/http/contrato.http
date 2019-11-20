@@ -22,7 +22,7 @@ Content-Type: application/json
 GET {{baseUrl}}/contratos
 ###
 // GET contratos/:id
-@id = 5d9bc1a19787521c4432c939
+@id = 5d9bcdc5d4ddba0dec8b052e
 GET {{baseUrl}}/contratos/{{id}}
 
 ###
@@ -37,8 +37,8 @@ PUT {{baseUrl}}/contratos/{{idUpdate}}
 Content-Type: application/json
 
 {
-    "nome": "Alterando Contrato",
-    "descricao": "A descrição do contrato foi alterada",
+    "nome": "Alterando Contrato de novo",
+    "descricao": "novissimo foi alterada",
     "numeroNota": "45678",
     "valor": "14539.68",
     "dataEmissao": "2019-10-22",
@@ -47,5 +47,5 @@ Content-Type: application/json
 }
 ###
 // DELETE contratos/:id
-@idDelete = 5d9bd0eed4ddba0dec8b0531
+@idDelete = 5d9bce2ed4ddba0dec8b0530
 DELETE {{baseUrl}}/contratos/{{idDelete}}
